@@ -8,9 +8,9 @@ Reads CSV files and formats them into MeTTa-compatible expressions.
 
 ## PreRequsities
 1. "Install Hyperon MeTTa"
-   pip install hyperon
+   `pip install hyperon`
 2. "Install CSV"
-   pip install csv
+   `pip install csv`
 
 ## Expected CSV Format
 The CSV you are planning to load must be in this format and it can have N number of data meaning its not limited to A B C D only
