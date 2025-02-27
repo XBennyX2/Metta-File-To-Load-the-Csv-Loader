@@ -1,5 +1,5 @@
-! (register-module! ../wrapper)
-! (import! &self wrapper:func)
+! (register-module! ../CSV_Loader)
+! (import! &self CSV_Loader:func)
 
 
 !(bind! &some (new-space))
