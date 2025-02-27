@@ -13,11 +13,6 @@ from hyperon import MeTTa, OperationAtom
 
 def load_csv_data_to_newspace(metta, csv_file_path):
 
-    # # Create a MeTTa instance
-    # metta = MeTTa()
-
-    # # Bind a new space with the given name
-    # metta.run(f"!(bind! &{space_name} (new-space))")
     filename = str(csv_file_path)
     arr = []
     # Open and read the CSV file
@@ -38,16 +33,8 @@ def load_csv_data_to_newspace(metta, csv_file_path):
     for a in arr:
         b += a
     b += ")"
-    # print(b)
     return metta.parse_all(b)
            
-    #         try:
-    #             # Load the expression into the new space
-    #             metta.run(f"!(add-atom &{space_name} {expr})")
-    #         except Exception as e:
-    #             print(f"Failed to load: {expr}\nError: {e}")
-    
-    # return metta
 
 
 @register_atoms(pass_metta=True)
@@ -58,10 +45,4 @@ def cnj_exp(metta):
         r"load_csv": loadCsv
     }
 
-
-# #Checking The Function
-# metta_instance = load_csv_data_to_newspace("truth.csv", "myNewSpace")
-
-# result = metta_instance.run("!(match &myNewSpace ($tv $a $b $c $d) ($tv $a $b $c $d))")
-# print("Query Results:", result)
-
+cnj_exp()
