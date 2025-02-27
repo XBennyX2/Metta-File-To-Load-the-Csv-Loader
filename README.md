@@ -15,8 +15,8 @@ Reads CSV files and formats them into MeTTa-compatible expressions.
 ## Expected CSV Format
 The CSV you are planning to load must be in this format and it can have N number of data meaning its not limited to A B C D only
 A,B,C,D,Truthvalue
-True,False,True,True,True
-False,True,True,True,True
+`True,False,True,True,True`
+`False,True,True,True,True`
 
 This will be converted into
 
@@ -24,7 +24,6 @@ This will be converted into
 (True (A False) (B True) (C True) (D True))
 
 ## Testing
-!(unify (False (A False) (B True) (C True) (D True) (E True)) ($truth-val ($A $T1)($B $T2)($C $T3)($D $T4)($E $T5)) True False)
-the above tests differs when using different formted csv file for the test the csv file contains that type of format and if it is loaded correctly it will return True
+The assertEqual checks weather the data that is loaded on the atom space matchs the structure of the csv file and if its correct it return () and if its not it returns what it expected and what it got in return
 
 ## Ensure that the python function is registered using get-type
