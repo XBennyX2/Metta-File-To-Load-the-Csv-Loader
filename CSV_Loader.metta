@@ -1,6 +1,4 @@
-! (register-module! ../CSV_Loader)
-! (import! &self CSV_Loader:func)
-
+! (import! &self func)
 
 !(bind! &some (new-space))
 
@@ -10,8 +8,16 @@
 
 (=(Loader $t $y) (let $x (load_csv $t) (add-atom $y $x)))
 
-;Make sure The Truth.csv file has a format of A,B,C,D,....TruthValue
+;Make sure The Truth.csv file has a format of A,B,C,D,TruthValue
 !(Loader truth.csv &some)
 
+;Test Case
+!(assertEqual
+    (match &some ($truth-val ($A $T1)($B $T2)($C $T3)($D $T4)($E $T5)) ($truth-val ($A $T1)($B $T2)($C $T3)($D $T4)($E $T5)))
+    (match &some $x $x )
+)
+
+!(match &some $x $x)
 
 !(match &some (True $x $Y $c $v $b) ($v))
+
